@@ -10,6 +10,8 @@ import Foundation
 /// Протокол взаимодействия ViewController-a с презенетром
 protocol CVPresentationLogic: AnyObject {
     init(view: CVView)
+    
+    func getDataFromModel()
 }
 
 final class CVPresenter {
@@ -18,6 +20,8 @@ final class CVPresenter {
     weak var view: CVView?
     
     // MARK: - Private properties
+    
+    private var viewModel: CVModel?
     
     // MARK: - Initializer
     
@@ -29,5 +33,10 @@ final class CVPresenter {
 // MARK: - Presentation Logic
 
 extension CVPresenter: CVPresentationLogic {
-    
+    func getDataFromModel() {
+        viewModel = CVModel.getModel()
+        guard let viewModel else { return }
+        
+        view?.updateDisplay(viewModel: viewModel)
+    }
 }

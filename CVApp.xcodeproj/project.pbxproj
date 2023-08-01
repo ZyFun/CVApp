@@ -15,6 +15,7 @@
 		2CAC38642A78F2C200735A2E /* CVConfiguratur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC38632A78F2C200735A2E /* CVConfiguratur.swift */; };
 		2CAC38662A78F2F700735A2E /* CVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC38652A78F2F700735A2E /* CVViewController.swift */; };
 		2CAC38682A78F33200735A2E /* CVPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC38672A78F33200735A2E /* CVPresenter.swift */; };
+		2CAC386A2A78F71700735A2E /* CVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC38692A78F71700735A2E /* CVModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		2CAC38632A78F2C200735A2E /* CVConfiguratur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVConfiguratur.swift; sourceTree = "<group>"; };
 		2CAC38652A78F2F700735A2E /* CVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVViewController.swift; sourceTree = "<group>"; };
 		2CAC38672A78F33200735A2E /* CVPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVPresenter.swift; sourceTree = "<group>"; };
+		2CAC38692A78F71700735A2E /* CVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				2CAC38652A78F2F700735A2E /* CVViewController.swift */,
 				2CAC38672A78F33200735A2E /* CVPresenter.swift */,
 				2CAC38632A78F2C200735A2E /* CVConfiguratur.swift */,
+				2CAC38692A78F71700735A2E /* CVModel.swift */,
 			);
 			path = CV;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CAC386A2A78F71700735A2E /* CVModel.swift in Sources */,
 				2CAC38472A78EE1B00735A2E /* AppDelegate.swift in Sources */,
 				2CAC38682A78F33200735A2E /* CVPresenter.swift in Sources */,
 				2CAC38662A78F2F700735A2E /* CVViewController.swift in Sources */,

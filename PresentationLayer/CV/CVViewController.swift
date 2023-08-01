@@ -9,7 +9,7 @@ import UIKit
 
 /// Протокол отображения данных ViewCintroller-a
 protocol CVView: AnyObject {
-    
+    func updateDisplay(viewModel: CVModel)
 }
 
 final class CVViewController: UIViewController {
@@ -26,6 +26,8 @@ final class CVViewController: UIViewController {
         super.viewDidLoad()
         
         setup()
+        
+        presenter?.getDataFromModel()
     }
     
     // MARK: - Actions
@@ -35,13 +37,22 @@ final class CVViewController: UIViewController {
 // MARK: - Логика обновления данных View
 
 extension CVViewController: CVView {
-    
+    func updateDisplay(viewModel: CVModel) {
+        print(viewModel.self)
+    }
 }
 
 // MARK: - Конфигурирование ViewController
 
 private extension CVViewController {
     func setup() {
-        view.backgroundColor = .blue
+        view.backgroundColor = .systemBackground
+        
+        setupNavigationController()
+    }
+    
+    func setupNavigationController() {
+        title = "Профиль"
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
 }
