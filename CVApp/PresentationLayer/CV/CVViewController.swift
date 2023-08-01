@@ -44,20 +44,8 @@ final class CVViewController: UIViewController {
         stackView.axis = .vertical
         stackView.spacing = 16
         stackView.distribution = .fill
-        stackView.layoutMargins = UIEdgeInsets(top: 24, left: 16, bottom: 24, right: 16)
+        stackView.layoutMargins = UIEdgeInsets(top: 24, left: 16, bottom: 20, right: 16)
         stackView.isLayoutMarginsRelativeArrangement = true
-        return stackView
-    }()
-    
-    private let bodyStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.spacing = 16
-        stackView.distribution = .fill
-        stackView.layoutMargins = UIEdgeInsets(top: 24, left: 16, bottom: 24, right: 16)
-        stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.backgroundColor = .blue
         return stackView
     }()
     
@@ -124,6 +112,43 @@ final class CVViewController: UIViewController {
         return label
     }()
     
+    private let bodyStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.spacing = 16
+        stackView.distribution = .fill
+        stackView.layoutMargins = UIEdgeInsets(top: 20, left: 16, bottom: 24, right: 16)
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.backgroundColor = Colors.bodyBackground
+        return stackView
+    }()
+    
+    private let aboutStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.spacing = 8
+        stackView.distribution = .fill
+        return stackView
+    }()
+    
+    private let aboutTitle: UILabel = {
+        let label = UILabel()
+        label.text = "О себе"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .boldSystemFont(ofSize: 16)
+        return label
+    }()
+    
+    private let aboutDescription: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 2
+        label.font = .systemFont(ofSize: 14)
+        return label
+    }()
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -150,6 +175,7 @@ extension CVViewController: CVView {
         nameLabel.text = viewModel.name
         descriptionLabel.text = viewModel.description
         cityLabel.text = viewModel.city
+        aboutDescription.text = viewModel.about
     }
 }
 
@@ -174,6 +200,7 @@ private extension CVViewController {
         scrollView.addSubview(stackView)
         
         stackView.addArrangedSubview(headerStackView)
+        stackView.addArrangedSubview(bodyStackView)
         
         headerStackView.addArrangedSubview(userInfoStackView)
         userInfoStackView.addArrangedSubview(userPhotoImageView)
@@ -185,6 +212,10 @@ private extension CVViewController {
         
         cityStackView.addArrangedSubview(cityPointImageView)
         cityStackView.addArrangedSubview(cityLabel)
+        
+        bodyStackView.addArrangedSubview(aboutStackView)
+        aboutStackView.addArrangedSubview(aboutTitle)
+        aboutStackView.addArrangedSubview(aboutDescription)
         
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
