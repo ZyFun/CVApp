@@ -9,6 +9,9 @@ import UIKit
 
 enum Icons: String {
     case cityPoint
+    
+    case editIcon
+    case saveIcon
 }
 
 // MARK: - Image render

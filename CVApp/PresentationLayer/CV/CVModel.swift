@@ -17,7 +17,7 @@ struct CVModel {
     
     static func getModel() -> CVModel {
         CVModel(
-            userPhoto: UIImage(named: "photoMock"),
+            userPhoto: UIImage(named: "photoMock"), // FIXME: На этой строчке возникает ошибка CFPropertyListCreateFromXMLData(). Если передать nil то ошибки нет. Не могу понять в чем причина.
             name: "Данилин Дмитрий Николаевич",
             description: "iOS-разработчик, опыт разработки 2 года",
             city: "Москва",
@@ -27,7 +27,7 @@ struct CVModel {
                 Skill(name: "CoreData"),
                 Skill(name: "SQLite"),
                 Skill(name: "MVP/MVC/VIPER"),
-                Skill(name: "CI/CD"),
+                Skill(name: "CI/CD")
             ],
             about: "Желание заниматься мобильной разработкой было еще в студенчестве и первые попытки написания приложений были для SymbianOS. Пробовал так же и Android, но остановил свой выбор на iOS"
         )

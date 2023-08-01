@@ -20,6 +20,8 @@ final class CVViewController: UIViewController {
     
     // MARK: - Private property
     
+    private var isSkillsEditing = false
+    
     // MARK: - UIElements
     
     private let scrollView: UIScrollView = {
@@ -37,6 +39,8 @@ final class CVViewController: UIViewController {
         stackView.distribution = .fill
         return stackView
     }()
+    
+    // MARK: Header section
     
     private let headerStackView: UIStackView = {
         let stackView = UIStackView()
@@ -112,6 +116,8 @@ final class CVViewController: UIViewController {
         return label
     }()
     
+    // MARK: Body sections
+    
     private let bodyStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -123,6 +129,53 @@ final class CVViewController: UIViewController {
         stackView.backgroundColor = Colors.bodyBackground
         return stackView
     }()
+    
+    // MARK: Skills
+    
+    private let skillsStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.spacing = 16
+        stackView.distribution = .fill
+        return stackView
+    }()
+    
+    private let titleStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .horizontal
+        stackView.spacing = 8
+        stackView.alignment = .top
+        return stackView
+    }()
+    
+    private let skillsTitleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Мои навыки"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .boldSystemFont(ofSize: 16)
+        return label
+    }()
+    
+    private lazy var skillsEditButton: UIButton = {
+        let button = UIButton(type: .system)
+        
+        let image = Icons.editIcon.image
+        button.setImage(image, for: .normal)
+        
+        button.clipsToBounds = true
+        button.addTarget(self, action: #selector(skillsEditButtonPressed), for: .touchUpInside)
+        
+        return button
+    }()
+    
+//    private let skillCollectionView: UICollectionView = {
+//        let view = UICollectionView()
+//        return view
+//    }()
+    
+    // MARK: About
     
     private let aboutStackView: UIStackView = {
         let stackView = UIStackView()
@@ -165,6 +218,24 @@ final class CVViewController: UIViewController {
     
     // MARK: - Actions
     
+    @objc private func skillsEditButtonPressed() {
+        isSkillsEditing.toggle()
+        
+        UIView.transition(
+            with: skillsEditButton,
+            duration: 0.2,
+            options: .transitionFlipFromLeft,
+            animations: {
+                if self.isSkillsEditing {
+                    let saveIcon = Icons.saveIcon.image
+                    self.skillsEditButton.setImage(saveIcon, for: .normal)
+                } else {
+                    let editIcon = Icons.editIcon.image
+                    self.skillsEditButton.setImage(editIcon, for: .normal)
+                }
+            }
+        )
+    }
 }
 
 // MARK: - Логика обновления данных View
@@ -212,6 +283,11 @@ private extension CVViewController {
         
         cityStackView.addArrangedSubview(cityPointImageView)
         cityStackView.addArrangedSubview(cityLabel)
+        
+        bodyStackView.addArrangedSubview(skillsStackView)
+        skillsStackView.addArrangedSubview(titleStackView)
+        titleStackView.addArrangedSubview(skillsTitleLabel)
+        titleStackView.addArrangedSubview(skillsEditButton)
         
         bodyStackView.addArrangedSubview(aboutStackView)
         aboutStackView.addArrangedSubview(aboutTitle)
