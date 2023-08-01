@@ -16,6 +16,8 @@
 		2CAC38662A78F2F700735A2E /* CVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC38652A78F2F700735A2E /* CVViewController.swift */; };
 		2CAC38682A78F33200735A2E /* CVPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC38672A78F33200735A2E /* CVPresenter.swift */; };
 		2CAC386A2A78F71700735A2E /* CVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC38692A78F71700735A2E /* CVModel.swift */; };
+		2CAC386E2A7904DB00735A2E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC386D2A7904DB00735A2E /* Colors.swift */; };
+		2CAC38702A79141000735A2E /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC386F2A79141000735A2E /* Icons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		2CAC38652A78F2F700735A2E /* CVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVViewController.swift; sourceTree = "<group>"; };
 		2CAC38672A78F33200735A2E /* CVPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVPresenter.swift; sourceTree = "<group>"; };
 		2CAC38692A78F71700735A2E /* CVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVModel.swift; sourceTree = "<group>"; };
+		2CAC386D2A7904DB00735A2E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		2CAC386F2A79141000735A2E /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +52,6 @@
 			children = (
 				2CAC385B2A78EF7900735A2E /* .gitignore */,
 				2CAC38452A78EE1B00735A2E /* CVApp */,
-				2CAC385F2A78F1E700735A2E /* PresentationLayer */,
 				2CAC38442A78EE1B00735A2E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,6 +69,8 @@
 			children = (
 				2CAC38542A78EE1D00735A2E /* Info.plist */,
 				2CAC385D2A78F0A000735A2E /* Default */,
+				2CAC386B2A79047400735A2E /* Common */,
+				2CAC385F2A78F1E700735A2E /* PresentationLayer */,
 			);
 			path = CVApp;
 			sourceTree = "<group>";
@@ -106,6 +111,23 @@
 				2CAC38692A78F71700735A2E /* CVModel.swift */,
 			);
 			path = CV;
+			sourceTree = "<group>";
+		};
+		2CAC386B2A79047400735A2E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2CAC386C2A7904B000735A2E /* Constants */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		2CAC386C2A7904B000735A2E /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				2CAC386D2A7904DB00735A2E /* Colors.swift */,
+				2CAC386F2A79141000735A2E /* Icons.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,7 +203,9 @@
 			files = (
 				2CAC386A2A78F71700735A2E /* CVModel.swift in Sources */,
 				2CAC38472A78EE1B00735A2E /* AppDelegate.swift in Sources */,
+				2CAC38702A79141000735A2E /* Icons.swift in Sources */,
 				2CAC38682A78F33200735A2E /* CVPresenter.swift in Sources */,
+				2CAC386E2A7904DB00735A2E /* Colors.swift in Sources */,
 				2CAC38662A78F2F700735A2E /* CVViewController.swift in Sources */,
 				2CAC38622A78F24200735A2E /* PresentationAssembly.swift in Sources */,
 				2CAC38642A78F2C200735A2E /* CVConfiguratur.swift in Sources */,

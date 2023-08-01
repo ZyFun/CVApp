@@ -17,8 +17,8 @@ struct CVModel {
     
     static func getModel() -> CVModel {
         CVModel(
-            userPhoto: nil, // TODO: Добавить фото
-            name: "Данилин Дмтрий Николаевич",
+            userPhoto: UIImage(named: "photoMock"),
+            name: "Данилин Дмитрий Николаевич",
             description: "iOS-разработчик, опыт разработки 2 года",
             city: "Москва",
             skills: [
