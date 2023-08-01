@@ -17,6 +17,7 @@ final class CVViewController: UIViewController {
     // MARK: - Public property
     
     var presenter: CVPresenter?
+    var dataSourceProvider: ISkillsDataSourceProvider?
     
     // MARK: - Private property
     
@@ -170,10 +171,15 @@ final class CVViewController: UIViewController {
         return button
     }()
     
-//    private let skillCollectionView: UICollectionView = {
-//        let view = UICollectionView()
-//        return view
-//    }()
+    private let  skillCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 12
+        layout.minimumLineSpacing = 12
+        
+        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     // MARK: About
     
@@ -247,6 +253,8 @@ extension CVViewController: CVView {
         descriptionLabel.text = viewModel.description
         cityLabel.text = viewModel.city
         aboutDescription.text = viewModel.about
+        
+        dataSourceProvider?.viewModels = viewModel.skills
     }
 }
 
@@ -259,11 +267,32 @@ private extension CVViewController {
         setupNavigationController()
         setupConstraints()
         userPhotoImageView.layoutIfNeeded()
+        
+        setupCollectionView()
     }
     
     func setupNavigationController() {
         title = "Профиль"
         navigationController?.navigationBar.prefersLargeTitles = false
+    }
+    
+    func setupCollectionView() {
+        registerElements()
+        
+        skillCollectionView.dataSource = dataSourceProvider
+        skillCollectionView.delegate = dataSourceProvider
+    }
+    
+    func registerElements() {
+        skillCollectionView.register(
+            SkillCell.self,
+            forCellWithReuseIdentifier: SkillCell.identifier
+        )
+        
+        skillCollectionView.register(
+            AddSkillCell.self,
+            forCellWithReuseIdentifier: AddSkillCell.identifier
+        )
     }
     
     func setupConstraints() {
@@ -289,6 +318,8 @@ private extension CVViewController {
         titleStackView.addArrangedSubview(skillsTitleLabel)
         titleStackView.addArrangedSubview(skillsEditButton)
         
+        skillsStackView.addArrangedSubview(skillCollectionView)
+        
         bodyStackView.addArrangedSubview(aboutStackView)
         aboutStackView.addArrangedSubview(aboutTitle)
         aboutStackView.addArrangedSubview(aboutDescription)
@@ -304,9 +335,12 @@ private extension CVViewController {
             stackView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
-            
+
             userPhotoImageView.heightAnchor.constraint(equalToConstant: 120),
             userPhotoImageView.widthAnchor.constraint(equalToConstant: 120),
+            
+            // TODO: Сделать высоту динамической
+            skillCollectionView.heightAnchor.constraint(equalToConstant: 300)
         ])
     }
 }

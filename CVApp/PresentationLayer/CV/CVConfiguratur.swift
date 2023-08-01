@@ -15,8 +15,12 @@ final class CVConfigurator {
     ) {
         guard let view = view as? CVViewController else { return }
         let presenter = CVPresenter(view: view)
+        let dataSourceProvider: ISkillsDataSourceProvider = SkillsDataSourceProvider(
+            presenter: presenter
+        )
         
         view.presenter = presenter
+        view.dataSourceProvider = dataSourceProvider
         presenter.view = view
     }
 }

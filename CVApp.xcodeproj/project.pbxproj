@@ -18,6 +18,10 @@
 		2CAC386A2A78F71700735A2E /* CVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC38692A78F71700735A2E /* CVModel.swift */; };
 		2CAC386E2A7904DB00735A2E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC386D2A7904DB00735A2E /* Colors.swift */; };
 		2CAC38702A79141000735A2E /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC386F2A79141000735A2E /* Icons.swift */; };
+		2CAC38732A79462000735A2E /* SkillsDataSourceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC38722A79462000735A2E /* SkillsDataSourceProvider.swift */; };
+		2CAC38752A7948DB00735A2E /* SkillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC38742A7948DB00735A2E /* SkillCell.swift */; };
+		2CAC38782A7948F700735A2E /* AddSkillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC38772A7948F700735A2E /* AddSkillCell.swift */; };
+		2CAC387A2A79494F00735A2E /* IdentifableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC38792A79494F00735A2E /* IdentifableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,10 @@
 		2CAC38692A78F71700735A2E /* CVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVModel.swift; sourceTree = "<group>"; };
 		2CAC386D2A7904DB00735A2E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		2CAC386F2A79141000735A2E /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
+		2CAC38722A79462000735A2E /* SkillsDataSourceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsDataSourceProvider.swift; sourceTree = "<group>"; };
+		2CAC38742A7948DB00735A2E /* SkillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillCell.swift; sourceTree = "<group>"; };
+		2CAC38772A7948F700735A2E /* AddSkillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSkillCell.swift; sourceTree = "<group>"; };
+		2CAC38792A79494F00735A2E /* IdentifableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +113,8 @@
 		2CAC38602A78F20700735A2E /* CV */ = {
 			isa = PBXGroup;
 			children = (
+				2CAC38762A7948E000735A2E /* Cells */,
+				2CAC38712A7945F300735A2E /* Providers */,
 				2CAC38652A78F2F700735A2E /* CVViewController.swift */,
 				2CAC38672A78F33200735A2E /* CVPresenter.swift */,
 				2CAC38632A78F2C200735A2E /* CVConfiguratur.swift */,
@@ -116,6 +126,7 @@
 		2CAC386B2A79047400735A2E /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				2CAC387B2A79495C00735A2E /* Protocols */,
 				2CAC386C2A7904B000735A2E /* Constants */,
 			);
 			path = Common;
@@ -128,6 +139,31 @@
 				2CAC386F2A79141000735A2E /* Icons.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		2CAC38712A7945F300735A2E /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				2CAC38722A79462000735A2E /* SkillsDataSourceProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		2CAC38762A7948E000735A2E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2CAC38742A7948DB00735A2E /* SkillCell.swift */,
+				2CAC38772A7948F700735A2E /* AddSkillCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		2CAC387B2A79495C00735A2E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2CAC38792A79494F00735A2E /* IdentifableCell.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,9 +242,13 @@
 				2CAC38702A79141000735A2E /* Icons.swift in Sources */,
 				2CAC38682A78F33200735A2E /* CVPresenter.swift in Sources */,
 				2CAC386E2A7904DB00735A2E /* Colors.swift in Sources */,
+				2CAC38732A79462000735A2E /* SkillsDataSourceProvider.swift in Sources */,
+				2CAC38782A7948F700735A2E /* AddSkillCell.swift in Sources */,
 				2CAC38662A78F2F700735A2E /* CVViewController.swift in Sources */,
 				2CAC38622A78F24200735A2E /* PresentationAssembly.swift in Sources */,
 				2CAC38642A78F2C200735A2E /* CVConfiguratur.swift in Sources */,
+				2CAC38752A7948DB00735A2E /* SkillCell.swift in Sources */,
+				2CAC387A2A79494F00735A2E /* IdentifableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
